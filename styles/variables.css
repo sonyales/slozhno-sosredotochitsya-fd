@@ -1,4 +1,43 @@
-/*
-  Переменные для вашего проекта
-  и их переопределение под различные устройства
-*/
+:root {
+  --page-background-image: url(../images/cover-image-dark.png);
+  --page-padding-block-inline: 10px; /* отступы по 4м сторонам */
+  --background-color: #000028; 
+  --accent-color: #FF0070; 
+  --corners-color: #FF0070;
+  --general-font-family: 'IBM Plex mono';
+  --font-size: 18px; 
+  --main-text-color: #F1B2CE; 
+  --main-title-color: #DB00FF; 
+  --accent-text-color: #000028;
+  --main-sections-gap: 50px; /* отступы между секций в main */
+  --main-margin-block: 40px; /* отступ у main сверху и снизу */
+  --theme-menu-margin-block: 63px 68px;
+  --theme-menu-gap: 10px; /* отступ между кнопками в меню тем */
+  --footer-title_margin-block: 251px;
+  --cover-text-padding-block: 53px 29px; /* отступ у текста в хедере */
+  --button-hover_color: #FF007066; 
+}
+
+@media (width >= 768px) {
+  :root {
+  --theme-menu-margin-block: 171px 174px;
+  --cover-text-padding-block: 162px 138px;
+  --footer-title_margin-block: 417px 415px;
+  }
+}
+
+@media (width >= 1024px) {
+  :root {
+  --theme-menu-margin-block: 0 273px;
+  --cover-text-padding-block: 114px 89px;
+  --footer-title_margin-block: 274px;
+  }
+}
+
+@media (width >= 768px), (width >= 1024px) {
+  :root {
+    --page-padding-block-inline: 20px;
+    --main-sections-gap: 80px;
+    --main-margin-block: 60px;
+  }
+}

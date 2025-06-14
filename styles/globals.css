@@ -20,6 +20,11 @@ h5,
 h6,
 p {
   margin: 0;
+  font-size: var(--font-size);
+}
+
+h4 {
+  font-weight: 400;
 }
 
 ul {

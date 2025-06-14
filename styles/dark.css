@@ -1,16 +1,71 @@
-/*
-  Специально для тёмной темы при наличии класса,
-  здесь окажутся стили, которые нужно переопределить принудительно,
-  переключая тему
-*/
-
 :root.theme-dark {
-  /* сохраните этот селектор в приведённом виде.
-    Так стили написанные ниже будут иметь больший вес,
-    чем стили в медиазапросе предпочтений пользователя
-  */
+  --page-background-image: url(../images/cover-image-dark.png);
+  --page-padding-block-inline: 10px; /* отступы по 4м сторонам */
+  --background-color: #000028; 
+  --accent-color: #FF0070; 
+  --corners-color: #FF0070;
+  --general-font-family: 'IBM Plex mono';
+  --font-size: 18px; 
+  --main-text-color: #F1B2CE; 
+  --main-title-color: #DB00FF; 
+  --accent-text-color: #000028;
+  --main-sections-gap: 50px; /* отступы между секций в main */
+  --main-margin-block: 40px; /* отступ у main сверху и снизу */
+  --theme-menu-margin-block: 63px 68px;
+  --theme-menu-gap: 10px; /* отступ между кнопками в меню тем */
+  --footer-title_margin-block: 251px;
+  --cover-text-padding-block: 53px 29px; /* отступ у текста в хедере */
+  --button-hover_color: #FF007066; 
 }
 
-.theme-dark .page {
-  /* Вам также нужно будет написать ряд подобных селекторов */
+.theme-dark .lamp {
+  display: block;
+  color: var(--accent-color);
+}
+
+.theme-dark .lamp::after {
+  content: "";
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  background-color: var(--accent-color);
+  border-radius: 50%;
+  box-shadow: 0 0 4px 2px var(--accent-color);
+  margin-inline: 10px;
+}
+
+.theme-dark .header__theme-menu-button {
+  color: var(--accent-color);
+}
+
+.theme-dark .header__theme-menu-button_active {
+  outline-color: var(--accent-color);
+}
+
+.theme-dark .header__theme-menu-button:hover {
+  outline-color: var(--button-hover_color);
+}
+
+@media (width >= 768px) {
+  :root.theme-dark {
+  --theme-menu-margin-block: 171px 174px;
+  --cover-text-padding-block: 162px 138px;
+  --footer-title_margin-block: 417px 415px;
+  }
+}
+
+@media (width >= 1024px) {
+  :root.theme-dark {
+  --theme-menu-margin-block: 0 273px;
+  --cover-text-padding-block: 114px 89px;
+  --footer-title_margin-block: 274px;
+  }
+}
+
+@media (width >= 768px), (width >= 1024px) {
+  :root.theme-dark {
+    --page-padding-block-inline: 20px;
+    --main-sections-gap: 80px;
+    --main-margin-block: 60px;
+  }
 }
