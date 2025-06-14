@@ -6,13 +6,18 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  font-family: var(--general-font-family), Arial, Helvetica, sans-serif;
+  font-family: var(--general-font-family),  monospace;
   font-weight: 400;
   font-size: var(--font-size);
   line-height: 130%;
   color: var(--main-text-color);
   padding-block: var(--page-padding-block-inline);
   padding-inline: var(--page-padding-block-inline);
+  background-image: var(--page-background-image);
+  background-color: var(--background-color);
+}
+
+.theme-light .page {
   background-image: var(--page-background-image);
   background-color: var(--background-color);
 }
@@ -28,6 +33,7 @@
 /* уголки */
 .focus-section::after,
 .focus-section::before {
+  position: absolute;
   content: "";
   display: block;
   width: 25px;
@@ -43,7 +49,8 @@
 .focus-section::before {
   border-block-start: 1px solid var(--corners-color);
   border-inline-end: 1px solid var(--corners-color);
-  justify-self: end;
+  top: 0;
+  right: 0;
 }
 
 /* header */
@@ -56,7 +63,8 @@
   "cover-text";
   position: relative;
   padding-block-end: var(--page-padding-block-inline);
-  min-block-size: min(1024px, 100vh);
+  block-size: min(1024px, 100vh);
+  min-height: 648px;
 }
 
 /* rec */
@@ -67,9 +75,24 @@
   right: 0;
 }
 
-/* уголки */
-.header.focus-section::before {
-  grid-area: menu;
+.theme-dark .lamp {
+  display: block;
+  color: var(--accent-color);
+}
+
+.theme-dark .lamp::after {
+  content: "";
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  background-color: var(--accent-color);
+  border-radius: 50%;
+  box-shadow: 0 0 4px 2px var(--accent-color);
+  margin-inline: 10px;
+}
+
+.theme-light .lamp {
+  display: none;
 }
 
 
@@ -95,6 +118,7 @@
   min-width: 70px;
   min-height: 26px;
   line-height: 100%;
+  cursor: pointer;
 }
 
 .header__theme-menu-button_active {
@@ -102,13 +126,23 @@
   outline: 1px solid var(--corners-color);
 }
 
-.header__theme-menu-button:hover {
-  outline: 1px solid var(--button-hover_color);
+.header__theme-menu-button_active,
+.theme-light  .header__theme-menu-button,
+.theme-light  .section_title {
+  outline-color: var(--corners-color);
+}
+
+.theme-dark .header__theme-menu-button:hover {
+  outline-color: var(--button-hover_color);
 }
 
 .header__theme-menu-button:focus-visible {
   outline: none;
-  border-bottom: 1px solid var(--accent-color);
+  border-bottom: 1px solid var(--corners-color);
+}
+
+.header__theme-menu-button:hover {
+  outline: 1px solid var(--button-hover_color);
 }
 
 .cover-title {
@@ -160,11 +194,18 @@
 }
 
 /* секции */
-.why-section,
-.what-section,
-.how-section {
+.section {
   display: grid;
   gap: 21px;
+}
+
+.what-section_title {
+  grid-row: 1 / 2;
+}
+
+.what_container {
+    gap: 20px;
+    display: grid;
 }
 
 /* почему-секция*/
@@ -192,7 +233,9 @@
   display: grid;
   grid-template-rows: min-content 1fr min-content;
   padding-block-start: var(--page-padding-block-inline);
-  height: 100vh;
+  block-size: min(1024px, 100vh);
+  min-height: 648px;
+  position: relative;
 }
 
 .footer-title {
@@ -221,9 +264,12 @@
 }
 
 @media (width >= 768px) {
-  .why-section, 
-  .what-section,
-  .how-section {
+  .header,
+  .footer {
+    min-height: 984px;
+  }
+
+  .section {
     grid-template-columns: 1fr 2fr;
   }
 
@@ -232,7 +278,8 @@
     grid-row: 1 / 3;
   }
 
-  .what-section_article {
+  .what_container {
+    gap: 21px;
     grid-column: 1 / 3;
   }
 
@@ -242,7 +289,7 @@
 
   .gallery-section_image {
     height: 100%;
-    min-width: 230px;
+    min-inline-size: 230px;
   }
 
   .gallery-section {
@@ -279,6 +326,10 @@
 }
 
 @media (width >= 1024px) {
+  .header,
+  .footer {
+    min-height: 728px;
+  }
 
   .header__theme-menu-list {
     flex-direction: row;
@@ -288,19 +339,23 @@
     justify-self: center;
   }
 
+  .section_title {
+    max-inline-size: 315px;
+  }
+
   .why-section,
   .how-section {
     grid-template-columns: 315px 1fr;
   }
 
   .what-section {
-    grid-template-columns: repeat(3, 1fr);
-    grid-auto-flow: column;
-    grid-auto-columns: 1fr;
+    grid-template-rows: min-content 1fr;
+    grid-template-columns: 1fr;
   }
 
-  .what-section_article {
-    grid-column: auto;
-    grid-row: 2 / 3;
+  .what_container {
+    row-gap: 0;
+    grid-template-columns: repeat(3, minmax(315px, 1fr));
+    grid-auto-columns: minmax(315px, 1fr);
   }
 }
