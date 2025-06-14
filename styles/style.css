@@ -37,6 +37,7 @@
 .focus-section::after {
   border-inline-start: 1px solid var(--corners-color);
   border-block-end: 1px solid var(--corners-color);
+  align-self: end;
 }
 
 .focus-section::before {
@@ -55,6 +56,7 @@
   "cover-text";
   position: relative;
   padding-block-end: var(--page-padding-block-inline);
+  min-block-size: min(1024px, 100vh);
 }
 
 /* rec */
@@ -189,7 +191,8 @@
 .footer {
   display: grid;
   grid-template-rows: min-content 1fr min-content;
-  padding-block-start: var(--page-padding-block-inline)
+  padding-block-start: var(--page-padding-block-inline);
+  height: 100vh;
 }
 
 .footer-title {
