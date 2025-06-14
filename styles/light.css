@@ -20,7 +20,7 @@
 }
 
 .theme-light  .header__theme-menu-button,
-.theme-light  .section_title  {
+.theme-light  .section_title {
   color: var(--accent-text-color);
 }
 
@@ -55,7 +55,7 @@
   }
 
   .theme-light  .header__theme-menu-button,
-  .theme-light  .section_title  {
+  .theme-light  .section_title {
     color: var(--accent-text-color);
   }
 

@@ -39,8 +39,7 @@
   border-block-end: 1px solid var(--corners-color);
 }
 
-.focus-section::before
-{
+.focus-section::before {
   border-block-start: 1px solid var(--corners-color);
   border-inline-end: 1px solid var(--corners-color);
   justify-self: end;
@@ -183,7 +182,7 @@
 .gallery-section_image {
   width: 100%;
   object-fit: cover;
-  object-position: center; 
+  object-position: center;
 }
 
 /* footer */
