@@ -36,15 +36,15 @@
 .focus-section::after {
   border-inline-start: 1px solid var(--corners-color);
   border-block-end: 1px solid var(--corners-color);
-  left: 0;
-  bottom: 0;
+  left: var(--page-padding-block-inline);
+  bottom: var(--page-padding-block-inline);
 }
 
 .focus-section::before {
   border-block-start: 1px solid var(--corners-color);
   border-inline-end: 1px solid var(--corners-color);
-  top: 0;
-  right: 0;
+  top: var(--page-padding-block-inline);
+  right: var(--page-padding-block-inline);
 }
 
 /* header */
@@ -56,8 +56,8 @@
   "cover-title"
   "cover-text";
   position: relative;
-  margin-block: var(--page-padding-block-inline);
-  margin-inline: var(--page-padding-block-inline);
+  padding-block: var(--page-padding-block-inline);
+  padding-inline: var(--page-padding-block-inline);
   min-block-size: min(648px, 100vh);
   block-size: 100vh;
 }
@@ -66,8 +66,8 @@
 .lamp {
   display: none;
   position: absolute;
-  top: 0;
-  right: 0;
+  top: var(--page-padding-block-inline);
+  right: var(--page-padding-block-inline);
   color: var(--accent-color);
 }
 
@@ -216,11 +216,10 @@
   position: relative;
   display: grid;
   grid-template-rows: min-content 1fr min-content;
-  padding-block-start: var(--page-padding-block-inline);
   min-block-size: min(648px, 100vh);
   block-size: 100vh;
-  margin-block: var(--page-padding-block-inline);
-  margin-inline: var(--page-padding-block-inline);
+  padding-block: var(--page-padding-block-inline);
+  padding-inline: var(--page-padding-block-inline);
 }
 
 .footer-title {
