@@ -58,7 +58,8 @@
   position: relative;
   margin-block: var(--page-padding-block-inline);
   margin-inline: var(--page-padding-block-inline);
-  block-size: min(648px, 100vh);
+  min-block-size: min(648px, 100vh);
+  block-size: 100vh;
 }
 
 /* rec */
@@ -80,9 +81,6 @@
   box-shadow: 0 0 4px 2px var(--accent-color);
   margin-inline: 10px;
 }
-
-
-
 
 /* стили для меню кнопок */
 .header__theme-menu {
@@ -219,7 +217,8 @@
   display: grid;
   grid-template-rows: min-content 1fr min-content;
   padding-block-start: var(--page-padding-block-inline);
-  block-size: min(648px, 100vh);
+  min-block-size: min(648px, 100vh);
+  block-size: 100vh;
   margin-block: var(--page-padding-block-inline);
   margin-inline: var(--page-padding-block-inline);
 }
