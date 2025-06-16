@@ -10,10 +10,10 @@
   --main-title-color: #DB00FF;
   --accent-text-color: #000028;
   --main-sections-gap: 50px; /* отступы между секций в main */
-  --main-margin-block: 50px; /* отступ у main сверху и снизу */
+  --main-margin-block: 40px; /* отступ у main сверху и снизу */
   --theme-menu-margin-block: 63px 68px;
   --theme-menu-gap: 10px; /* отступ между кнопками в меню тем */
-  --footer-title_margin-block: 268px;
+  --footer-title_margin-block: 276px 275px;
   --cover-text-padding-block: 53px 29px; /* отступ у текста в хедере */
   --button-hover_color: #FF007066;
 }
@@ -22,7 +22,7 @@
   :root {
   --theme-menu-margin-block: 171px 174px;
   --cover-text-padding-block: 162px 138px;
-  --footer-title_margin-block: 422px 415px;
+  --footer-title_margin-block: 443px 442px;
   }
   }
 
@@ -30,7 +30,7 @@
   :root {
   --theme-menu-margin-block: 0 273px;
   --cover-text-padding-block: 114px 89px;
-  --footer-title_margin-block: 280px 274px;
+  --footer-title_margin-block: 299px;
   }
 }
 
