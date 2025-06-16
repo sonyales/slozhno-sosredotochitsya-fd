@@ -8,3 +8,7 @@
   --accent-text-color: #000028;
   --button-hover_color: #FF007066;
 }
+
+.theme-dark .lamp {
+  display: block;
+}

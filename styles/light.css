@@ -21,3 +21,7 @@
     --button-hover_color: #32312D66;
   }
 }  
+
+.theme-light .lamp {
+  display: none;
+}
