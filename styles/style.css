@@ -152,7 +152,7 @@
 .article {
   display: flex;
   flex-direction: column;
-  gap: 9px;
+  gap: 10px;
 }
 
 /* ссылка в тексте */
